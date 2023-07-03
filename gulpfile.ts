@@ -34,6 +34,7 @@ gulp.task('build', () => {
 		'build/favicon/**/*.*',
 		'models/**/*.js',
 		'routes/**/*.js',
+		'views/**/*.jade',
 		'app.js',
 		'package.json',
 		'package-lock.json',
