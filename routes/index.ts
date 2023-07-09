@@ -1,5 +1,6 @@
 var express = require('express');
-const Sensor = require('../models/Sensor');
+
+const SensorCtrl = require('../controllers/sensor-ctrl')
 
 var router = express.Router();
 
@@ -8,6 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/*
 router.post('/sensor', function(req:any, res:any, next:any) {
 	
 	let date = req.body.date;
@@ -22,6 +24,12 @@ router.post('/sensor', function(req:any, res:any, next:any) {
 
 	res.json({ id: 1 });
 });
+*/
 
+router.post('/sensor', SensorCtrl.createSensor)
+router.put('/sensor/:id', SensorCtrl.updateSensor)
+router.delete('/sensor/:id', SensorCtrl.deleteSensor)
+router.get('/sensor/:id', SensorCtrl.getSensorById)
+router.get('/sensors', SensorCtrl.getSensors)
 
 module.exports = router;

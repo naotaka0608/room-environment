@@ -1,13 +1,16 @@
-const mongoose1 = require('mongoose')
-const Schema = mongoose1.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 // const ObjectId = Schema.ObjectId
 
-const SensorSchema = new Schema({
+const Sensor : any = new Schema(
   // id: ObjectId,
-  date: { type: Date },
-  humidity: { type: Number, default: 0 },
-  temperature: { type: Number, default: 0 },
-})
+  {
+    date: { type: Date },
+    humidity: { type: Number, default: 0 },
+    temperature: { type: Number, default: 0 },
+  },
+)
 
 
-module.exports = mongoose1.model('Sensor', SensorSchema)
+//module.exports = mongoose.model('sensors', Sensor)
+export default mongoose.model('sensors', Sensor)

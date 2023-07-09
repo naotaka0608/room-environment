@@ -42,7 +42,7 @@ app.use(function(err:any, req:any, res:any, next:any) {
 
 /* database */
 /* --------------------begin-------------------- */
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // When the database is closed
 mongoose.connection.on('closed', () => {

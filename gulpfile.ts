@@ -6,6 +6,7 @@ const configured_typescript = typescript.createProject("server_tsconfig.json");
 
 gulp.task('compile', () => {
 	return gulp.src([
+		'controllers/**/*.ts',
 		'models/**/*.ts',
 		'app.ts',
 		'routes/**/*.ts',
@@ -32,6 +33,7 @@ gulp.task('build', () => {
 		'build/images/**/*.*',
 		'build/iconfont/**/*.*',
 		'build/favicon/**/*.*',
+		'controllers/**/*.js',
 		'models/**/*.js',
 		'routes/**/*.js',
 		'views/**/*.jade',

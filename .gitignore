@@ -14,6 +14,7 @@
 
 app.js
 *.js.map
+/controllers/*.js
 /routes/*.js
 /models/*.js
 /src/javascripts/*.js
