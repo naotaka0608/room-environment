@@ -9,27 +9,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/*
-router.post('/sensor', function(req:any, res:any, next:any) {
-	
-	let date = req.body.date;
-	let humidity = req.body.humidity;
-	let temperature = req.body.temperature;
-
-	let data = {date, humidity, temperature}
-
-	console.log(data);
-	const newSensor = new Sensor(data);
-	newSensor.save();	
-
-	res.json({ id: 1 });
-});
-*/
-
-router.post('/sensor', SensorCtrl.createSensor)
-router.put('/sensor/:id', SensorCtrl.updateSensor)
-router.delete('/sensor/:id', SensorCtrl.deleteSensor)
-router.get('/sensor/:id', SensorCtrl.getSensorById)
-router.get('/sensors', SensorCtrl.getSensors)
+router.post('/sensor', SensorCtrl.CreateSensor)
+router.put('/sensor/:id', SensorCtrl.UpdateSensor)
+router.delete('/sensor/:id', SensorCtrl.DeleteSensor)
+router.get('/sensor/:id', SensorCtrl.GetSensorById)
+router.get('/sensors', SensorCtrl.GetSensors)
 
 module.exports = router;

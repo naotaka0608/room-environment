@@ -1,6 +1,6 @@
 import Sensor from '../models/Sensor'
 
-const createSensor : any = (req : any, res : any) => {
+const CreateSensor : any = (req : any, res : any) => {
     const body = req.body
 
     if (!body) {
@@ -36,7 +36,7 @@ const createSensor : any = (req : any, res : any) => {
 }
 
 
-const updateSensor : any = async (req : any, res : any) => {
+const UpdateSensor : any = async (req : any, res : any) => {
     const body : any = req.body
 
     if (!body) {
@@ -75,7 +75,7 @@ const updateSensor : any = async (req : any, res : any) => {
     })
 }
 
-const deleteSensor : any = async (req : any, res : any) => {
+const DeleteSensor : any = async (req : any, res : any) => {
     await Sensor.findOneAndDelete({ _id: req.params.id }, (err : any, sensor : any) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
@@ -91,7 +91,7 @@ const deleteSensor : any = async (req : any, res : any) => {
     }).catch((err : any) => console.log(err))
 }
 
-const getSensorById : any = async (req : any, res : any) => {
+const GetSensorById : any = async (req : any, res : any) => {
     await Sensor.findOne({ _id: req.params.id }, (err : any, sensor : any) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
@@ -101,7 +101,7 @@ const getSensorById : any = async (req : any, res : any) => {
     }).catch((err : any) => console.log(err))
 }
 
-const getSensors : any = async (req : any, res : any) => {
+const GetSensors : any = async (req : any, res : any) => {
     await Sensor.find({}, (err : any, sensors : any) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
@@ -116,9 +116,9 @@ const getSensors : any = async (req : any, res : any) => {
 }
 
 module.exports = {
-    createSensor,
-    updateSensor,
-    deleteSensor,
-    getSensors,
-    getSensorById,
+    CreateSensor,
+    UpdateSensor,
+    DeleteSensor,
+    GetSensors,
+    GetSensorById,
 }
