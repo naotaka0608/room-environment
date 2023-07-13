@@ -1,13 +1,15 @@
-import React from 'react';
 import './App.css';
-import Sidebar from './components/Sidebar';
+import AppBar from './components/AppBar';
+import TableList from './components/TableList';
 
 function App() {
   return (
     <div className="App">
-      <Sidebar />
-    </div>
+      <AppBar />
+      <TableList />
+    </div>  
   );
 }
+
 
 export default App;

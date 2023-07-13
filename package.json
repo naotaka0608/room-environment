@@ -2,9 +2,10 @@
   "name": "react-tsc-express",
   "version": "0.0.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "node ./bin/www",
-    "start1": "react-scripts start",
+    "start": "react-scripts start",
+    "start1": "node ./bin/www",
     "build": "rimraf ./product && react-scripts build && gulp && move product/build product/public",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -22,6 +23,7 @@
     "@types/node": "^16.18.37",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "axios": "^1.4.0",
     "chart.js": "^4.3.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
