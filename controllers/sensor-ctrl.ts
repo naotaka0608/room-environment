@@ -1,4 +1,4 @@
-import Sensor from '../models/Sensor'
+import Sensor from '../models/sensor'
 
 const CreateSensor : any = (req : any, res : any) => {
     const body = req.body
