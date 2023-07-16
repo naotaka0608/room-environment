@@ -6,7 +6,8 @@
   "scripts": {
     "start-frontend": "react-scripts start",
     "start-backend": "node ./bin/www",
-    "build": "rimraf ./product && react-scripts build && gulp && move product/build product/public",
+    "build-windows": "rimraf ./product && react-scripts build && gulp && move product/build product/public",
+    "build-linux": "rimraf ./product && react-scripts build && gulp && mv product/build product/public",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
